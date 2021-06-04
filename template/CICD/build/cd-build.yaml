@@ -1,0 +1,28 @@
+pool:
+ vmImage: windows-latest
+
+jobs:
+  - job: Build
+    steps:
+      - task: UseDotNet@2
+        inputs:
+          version: '5.0.x'
+      - task: DotNetCoreCLI@2
+        displayName: "Continuous Deployment - Build and Publish Artifacts"
+        inputs:
+           command: publish
+           publishWebProjects: false
+           zipAfterPublish: false
+           projects: '**/*.Api.csproj'
+           arguments: '--output $(Build.ArtifactStagingDirectory)\ProjectName.Api\'
+      - task: CopyFiles@2
+        displayName: 'Copy Arm Template'
+        inputs:
+           SourceFolder: '$(Build.SourcesDirectory)/CICD/deploy/'
+           TargetFolder: '$(Build.ArtifactStagingDirectory)/ArmTemplate/'
+      - task: PublishBuildArtifacts@1
+        displayName: 'Publish Artifacts'
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'ProjectName'
+          publishLocation: 'Container'

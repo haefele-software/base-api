@@ -1,0 +1,23 @@
+variables:
+  Major: '1'
+  Minor: '0'
+  Patch: '0'
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet pack $(buildConfiguration)'
+  inputs:
+    command: pack
+    projects: "**/templatepack.csproj"
+    versioningScheme: byPrereleaseNumber
+    majorVersion: '$(Major)'
+    minorVersion: '$(Minor)'
+    patchVersion: '$(Patch)'
+- task: NuGetAuthenticate@0
+  displayName: 'NuGet Authenticate'
+- task: NuGetCommand@2
+  displayName: 'NuGet push'
+  inputs:
+    command: push
+    publishVstsFeed: 'Haefele Architecture/Haefele.Architecture.Feed'
+    allowPackageConflicts: true

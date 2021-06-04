@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="10.1.1" />
+		<PackageReference Include="Azure.Identity" Version="1.4.0" />
+		<PackageReference Include="Azure.Security.KeyVault.Keys" Version="4.1.0" /> 
+		<PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="5.0.6" /> 
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ProjectName.Application.Contracts\ProjectName.Application.Contracts.csproj" />
+		<ProjectReference Include="..\ProjectName.Application.Models\ProjectName.Application.Models.csproj" />
+		<ProjectReference Include="..\ProjectName.Domain\ProjectName.Application.Domain.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+		<PackageReference Include="FluentValidation" Version="10.2.3" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.2.3" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ProjectName.Application.Contracts\ProjectName.Application.Contracts.csproj" />
+	  <ProjectReference Include="..\ProjectName.Application.Domain.Events\ProjectName.Application.Domain.Events.csproj" />
+	  <ProjectReference Include="..\ProjectName.Application.Models\ProjectName.Application.Models.csproj" />
+	  <ProjectReference Include="..\ProjectName.Common\ProjectName.Common.csproj" />
+	  <ProjectReference Include="..\ProjectName.Domain\ProjectName.Application.Domain.csproj" />
+	</ItemGroup>
+
+</Project>
