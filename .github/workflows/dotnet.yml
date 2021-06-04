@@ -24,4 +24,11 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack templatepack.csproj -p:PackageVersion=1.0.0 --output /releases
+      run: dotnet pack templatepack.csproj -p:PackageVersion=1.0.0   
+    - uses: ncipollo/release-action@v1
+    - name: Create Release
+      with:
+        artifacts: "*.nupkgs"
+        bodyFile: "README.md"
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
