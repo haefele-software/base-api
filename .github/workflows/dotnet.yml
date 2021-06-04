@@ -30,5 +30,6 @@ jobs:
       with:
         artifacts: "*.nupkg"
         bodyFile: "README.md"
+        tag: release
         token: ${{ secrets.GITHUB_TOKEN }}
     
