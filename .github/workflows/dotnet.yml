@@ -29,7 +29,6 @@ jobs:
       uses: ncipollo/release-action@v1.8.6
       with:
         artifacts: "*.nupkg"
-        bodyFile: "body.md"
         tag: release
         token: ${{ secrets.GITHUB_TOKEN }}
     
