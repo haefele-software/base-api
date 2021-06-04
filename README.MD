@@ -11,9 +11,7 @@ There are only 2 things you need to do to get the template set up on your machin
 
 ## Installing the Template
 
-1. Download the template package latest release:  
-   
-   Select and download **HS.Clean.API**
+1. Download the template package latest [release]: https://github.com/haefele-software/base-api/releases  
      
 2. Run the following command from the cmd prompt:
 
