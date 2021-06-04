@@ -25,10 +25,15 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Pack
       run: dotnet pack templatepack.csproj -p:PackageVersion=1.0.0 -o release
+    - name: Bump version and push tag
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v5.5
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Create Release
       uses: ncipollo/release-action@v1.8.6
       with:
         artifacts: "release/*.nupkg"
-        tag: release
+        tag: ${{ steps.tag_version.outputs.new_tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
     
