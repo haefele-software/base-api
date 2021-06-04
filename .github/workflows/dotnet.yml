@@ -24,4 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack ~/templatepack.csproj -p:PackageVersion=1.0.0 --output release
+      run: dotnet pack templatepack.csproj -p:PackageVersion=1.0.0 --output release
