@@ -11,9 +11,7 @@ There are only 2 things you need to do to get the template set up on your machin
 
 ## Installing the Template
 
-1. Download the template package from the projects Artifacts Tab: 
-
-   **[Artifact Feed](https://dev.azure.com/haefelesoftware/Haefele%20Architecture/_packaging?_a=feed&feed=Haefele.Architecture.Feed)**
+1. Download the template package latest release:  
    
    Select and download **HS.Clean.API**
      
