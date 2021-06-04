@@ -24,11 +24,11 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack templatepack.csproj -p:PackageVersion=1.0.0 -o
+      run: dotnet pack templatepack.csproj -p:PackageVersion=1.0.0 -o release
     - name: Create Release
       uses: ncipollo/release-action@v1.8.6
       with:
-        artifacts: "*.nupkg"
+        artifacts: "release/*.nupkg"
         tag: release
         token: ${{ secrets.GITHUB_TOKEN }}
     
