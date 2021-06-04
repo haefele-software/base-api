@@ -15,15 +15,15 @@ There are only 2 things you need to do to get the template set up on your machin
      
 2. Run the following command from the cmd prompt:
 
-   > **dotnet new -i <PATH-TO-DOWNLOADED-PACKAGE>**
+   > **dotnet new -i < PATH-TO-DOWNLOADED-PACKAGE >**
    
 ## Using the installed template for your project
 
 1. Follow these steps to create a solution based on the template you just installed:
 
-   > **md <project-name>**
+   > **md < project-name >**
    
-   > **cd <project-name>**
+   > **cd < project-name >**
    
    > **dotnet new hs-api**
 
