@@ -1,6 +1,6 @@
 # Introduction 
 
-This is the Haefele Software Template solution. It is based on Jason Taylor's Clean Architecture for .net 5.0. it expands upon this solution by adding some cool features.
+This is the Haefele Software API Template solution. It is based on Jason Taylor's Clean Architecture for .net 5.0. it expands upon this solution by adding some cool features.
 
 # Getting Started
 
@@ -27,4 +27,4 @@ There are only 2 things you need to do to get the template set up on your machin
    
    > **dotnet new hs-api**
 
-   You will now a fully implemented solution architecture to begin filling in your domain. 
+   You will now have a fully implemented solution architecture to begin filling in your domain. 
